@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#wrapper{
+    margin-top:5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+button{
+    padding:0.8rem;
+}
+.active{
+    background-color: green;
+    color:white;
+}
+.imageDiv{
+   
+    width:100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-top:5rem;
+}

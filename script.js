@@ -18,9 +18,14 @@ let value=null;
 btns.forEach((button) => {
   button.addEventListener("click", function (e) {
     value = e.target.value;
-    button.style.backgroundColor = "green";
-    button.style.color = "white";
+    btns.forEach((ele)=>ele.classList.remove("active"))
+    button.classList.add("active")
     console.log(value);
+
+    // btns.forEach((btn) => {
+    //   btn.style.backgroundColor = "";  
+    //   btn.style.color = "";
+    // });
   });
 });
 
@@ -29,27 +34,26 @@ function diseDisplay() {
 
     
     image.addEventListener("click", function () {
-        if (!value) {
+        if (value==null) {
          alert("Please select a number");
          return;
        }
-      imageDiv.innerHTML = "";
-    const img = document.createElement("img");
-    const imgDiv = document.createElement("div");
-    const randomIndex = Math.floor(Math.random() * dise.length);
+       else{
+ const randomIndex = Math.floor(Math.random() * dise.length);
 
     console.log(randomIndex);
 
-    img.src = dise[randomIndex];
-
-    imgDiv.append(img);
-    imageDiv.append(imgDiv);
+    image.src = dise[randomIndex];
 
     if (parseInt(value) === randomIndex + 1) {
-      resultDiv.innerHTML = 15;
+      resultDiv.innerHTML += 15;
     } else { 
-      resultDiv.innerHTML = -5;
+      resultDiv.innerHTML -= 5;
     }
+       }
+     
+   
+       value=null
 });
 }
 
